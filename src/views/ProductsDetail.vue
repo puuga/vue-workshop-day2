@@ -5,13 +5,14 @@
         <strong>{{ product.Name }}</strong><br/>
         <i>{{ product.Description }}</i><br/>
         <strong class="product-price">{{ product.Price }} {{ product.CurrencyCode }}</strong><br/>
-        <button class="add-to-cart">Add {{ product.Name }} to cart</button>
+        <button class="add-to-cart" @click="addToCart(product)">Add {{ product.Name }} to cart</button>
         <br/>
     </div>
 </template>
 
 <script>
 import products from '../products.json'
+import { mapMutations, mapActions } from 'vuex'
 
 export default {
     name: 'ProductsDetail',
@@ -24,6 +25,11 @@ export default {
     mounted() {
         this.product = this.products.find(it => it.ProductId === this.$route.params.productId)
     },
+    methods: {
+        ...mapActions([
+            'addToCart'
+        ])
+    }
 }
 </script>
 

@@ -15,7 +15,7 @@
                     Detail &gt;&gt;&gt;
                 </router-link>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="add-to-cart">Add {{ product.Name }} to cart</button>
+                <button class="add-to-cart" @click="addToCart(product)">Add {{ product.Name }} to cart</button>
             </p>
         </div>
 
@@ -24,6 +24,7 @@
 
 <script>
 import products from '../products.json'
+import { mapMutations, mapActions } from 'vuex'
 
 export default {
     name: 'Products',
@@ -31,6 +32,11 @@ export default {
         return {
             products: products
         }
+    },
+    methods: {
+        ...mapActions([
+            'addToCart'
+        ])
     }
 }
 </script>

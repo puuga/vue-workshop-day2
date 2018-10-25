@@ -1,8 +1,26 @@
 <template>
     <div id="app">
+        <CartBar/>
         <router-view/>
     </div>
 </template>
+
+<script>
+import CartBar from './components/CartBar'
+
+export default {
+    name: 'App',
+    components: {
+        CartBar
+    },
+    data () {
+        return {
+
+        }
+    },
+    mounted () {}
+}
+</script>
 
 <style scoped>
 #app {
