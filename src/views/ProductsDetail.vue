@@ -5,6 +5,7 @@
         <strong>{{ product.Name }}</strong><br/>
         <i>{{ product.Description }}</i><br/>
         <strong class="product-price">{{ product.Price }} {{ product.CurrencyCode }}</strong><br/>
+        <button class="add-to-cart">Add {{ product.Name }} to cart</button>
         <br/>
     </div>
 </template>
@@ -30,5 +31,8 @@ export default {
 .product-price {
     font-size: 2rem;
     color: green;
+}
+.add-to-cart {
+    padding: 1rem;
 }
 </style>

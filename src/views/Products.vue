@@ -14,6 +14,8 @@
                 <router-link :to="{ name: 'products-detail', params: { productId: product.ProductId } }">
                     Detail &gt;&gt;&gt;
                 </router-link>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart">Add {{ product.Name }} to cart</button>
             </p>
         </div>
 
